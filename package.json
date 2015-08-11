@@ -6,9 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Kristoffer Jansson",
+    "email": "k@kristofferjansson.com"
+  },
+  "license": "GPL-2.0",
   "dependencies": {
     "express": "^4.13.3"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "dok": "dokumentera.js"
+  },
+  "readmeFilename": "README.md",
+  "engines": {
+    "node": ">= 0.12.x"
   }
 }

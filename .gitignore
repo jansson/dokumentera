@@ -31,3 +31,4 @@ typings/
 
 # Compiled files
 *.js
+!dokumentera.js
