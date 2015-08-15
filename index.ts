@@ -13,7 +13,7 @@ export class Article {
 		this.rawBody = data.toString();
 		
 		// Try extracting the title from first header
-		let m = this.rawBody.match("^=*\s*(.+?)\s*=*(\r|\n|\z)")
+		let m = this.rawBody.match("^#*\s*(.+?)\s*(\r|\n|\z)")
 		if (m && m.length >= 2) {
 			this.title = m[1].trim();
 		}
