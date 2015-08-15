@@ -1,7 +1,7 @@
 import * as path from "path";
 import * as fs from "fs";
 import Server = require("./server");
-import Articles = require("./articles");
+import idx = require("./index");
 
 var clientPath = path.join(__dirname, "client");
 var docPath = process.cwd();
@@ -20,6 +20,4 @@ console.log("---");
 console.log("Client path: " + clientPath);
 console.log("Documentation path: " + docPath);
 
-var t = new Articles.ArticleTree(docPath);
-
-Server.run(t);
+Server.run(new idx.Indexer(docPath));

@@ -1,8 +1,8 @@
 import * as express from "express";
 import * as path from "path";
-import Articles = require("./articles");
+import idx = require("./index");
 
-export function run(articles: Articles.ArticleTree) {
+export function run(indexer: idx.Indexer) {
 
 	var app = express();
 	
@@ -21,6 +21,15 @@ export function run(articles: Articles.ArticleTree) {
 	});
 	
 	app.use("/client", express.static(path.join(__dirname, "client")));
+	
+	app.get("/api/navigation", (req, res) => {
+		res.send(indexer.getNavigation());
+	});
+	
+	app.get("/api/article*", (req, res) => {
+		let url = req.path.substr("/api/article/".length).replace(/^\/+|\/+$/g, '');
+		res.send(indexer.getArticle(url));
+	});
 	
 	var server = app.listen(3000, function () {
 	  var host = server.address().address;
