@@ -1,0 +1,27 @@
+.sidebar {
+	width: 300px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	
+	background-color: #888;
+	
+	overflow-y: auto;
+	-webkit-overflow-scrolling: auto;
+}
+.sidebar-nav {
+	padding: 1rem;
+}
+
+
+.search {
+	background-color: #eee;
+	padding: 3rem;
+	text-align: center;
+}
+
+.content {
+	margin-left: 300px;
+	padding: 2rem;
+}
